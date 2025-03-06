@@ -9,7 +9,7 @@
         :key="category.type"
         @click="selectCategory(category.type)"
         title="Click para ver las tecnologías"
-        class="px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded transition"
+        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300"
       >
         {{ category.type }}
       </button>
