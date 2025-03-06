@@ -55,12 +55,26 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 ```
 
 ## 🚀 Instrucciones de Ejecución Local
-# Clonar repositorio
-git clone <repositorio-url>
-cd <nombre-del-proyecto>
 
-# Instalar dependencias
+1. **Clonar repositorio**
+```bash
+git clone https://github.com/Bastardboy/ulern-test
+cd ulern-test
+```
+
+2. **Instalar dependencias**
+```bash
 npm install
+```
 
-# Iniciar servidor de desarrollo
+3. **Ejecutar en modo desarrollo**
+```bash
 npm run dev
+```
+
+4. **Servidor Local**
+```bash
+http://localhost:4321
+```
+
+## Desarrollado por David Pazán 🚀
