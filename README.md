@@ -1,48 +1,66 @@
-# Astro Starter Kit: Basics
+# 🚀 Prueba Técnica - Landing Page con Astro.js
 
-```sh
-npm create astro@latest -- --template basics
-```
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 📌 Descripción
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS y TypeScript como parte de una prueba técnica. Incluye características interactivas y optimizaciones de rendimiento.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🌐 Demo
 
-## 🚀 Project Structure
+🔗 [Ver la demo en Vercel](https://tu-url-de-vercel-aqui.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tecnologías Utilizadas
 
-```text
+- **Astro.js** - Framework para sitios web rápidos y optimizados
+- **Vue.js** - Interactividad en el frontend
+- **TailwindCSS** - Diseño y maquetación eficiente
+- **TypeScript** - Seguridad y mantenibilidad del código
+- **Vercel** - Despliegue de la aplicación
+
+## 🎨 Características
+
+- ✔️ Modo oscuro/claro conmutables
+- ✔️ Efectos hover interactivos
+- ✔️ Sección de tecnologías con niveles de conocimiento
+- ✔️ Optimización SSR con Astro.js
+- ✔️ Diseño completamente responsivo
+
+## 📂 Estructura del Proyecto
+
+```bash
 /
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   └── images/
+│       ├── David1.webp
+│       └── David2.webp
 ├── src/
+│   ├── components/
+│   │   ├── aboutme.astro
+│   │   ├── projects.astro
+│   │   ├── technologies.astro
+│   │   └── ThemeSwitcher.vue
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/
+│   │   └── index.astro
+│   ├── styles/
+│   │   └── global.css
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🚀 Instrucciones de Ejecución Local
+# Clonar repositorio
+git clone <repositorio-url>
+cd <nombre-del-proyecto>
 
-## 🧞 Commands
+# Instalar dependencias
+npm install
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Iniciar servidor de desarrollo
+npm run dev
