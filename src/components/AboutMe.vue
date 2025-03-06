@@ -9,13 +9,13 @@
 
     <!-- Información -->
     <div class="text-center md:text-left">
-      <h2 class="text-2xl font-bold mb-2">{{ sectionTitle }}</h2>
-      <p class="text-lg font-semibold">{{ name }}</p>
+      <h2 class="text-2xl font-bold mb-4">{{ sectionTitle }}</h2>
+      <p class="text-lg font-bold text-gray-800 dark:text-gray-200">{{ name }}</p>
 
       <!-- Información profesional/personal -->
       <div class="mb-4">
-        <p v-for="(desc, index) in aboutMe.info" :key="'info-' + index" class="text-md">
-          - {{ desc }}
+        <p v-for="(desc, index) in aboutMe.info" :key="'info-' + index" class="text-sm text-gray-700 dark:text-gray-300 flex items-center">
+          <i class="fas fa-check-circle mr-2 text-gray-800 dark:text-gray-200"></i> {{ desc }}
         </p>
       </div>
     </div>
