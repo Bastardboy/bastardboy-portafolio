@@ -1,6 +1,6 @@
 <template>
   <!-- Sección de Contacto -->
-   <section class="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
+  <section class="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-screen">
     <div class="flex justify-center items-center py-16 px-4 bg-white dark:bg-[#161B22] w-full">
     <div class="max-w-4xl mx-auto text-center">
       <div class="mb-12 group cursor-default">
