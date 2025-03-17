@@ -3,7 +3,8 @@
   "include": [
     ".astro/types.d.ts",
     "**/*",
-    "!src/components/Header.astro"
+    "!src/components/Header.astro",
+    "!src/components/Education.astro"
   ],
   "exclude": [
     "dist"

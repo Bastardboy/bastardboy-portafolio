@@ -166,7 +166,7 @@ a:hover {
   color: var(--hover-color);
 }
 
-.card, .section {
+.card{
   background-color: var(--card-color);
   color: var(--text-color);
   border-radius: 1rem;
@@ -175,7 +175,7 @@ a:hover {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover, .section:hover {
+.card:hover{
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.5), 0 0 30px rgba(88, 166, 255, 0.2);
 }
@@ -197,4 +197,18 @@ a:hover {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(10px);
+}
+
+.card {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
 }

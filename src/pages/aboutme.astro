@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import AboutMe from "../components/AboutMe.vue";
 import Header from "../components/Header.vue";
-
+import Footer from "../components/footer.vue";
 const DavidPerfil = "images/David1.webp";
 const DavidAlt = "images/David2.webp";
 
@@ -41,10 +41,6 @@ const initialTheme = "light";
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-blue-900 text-white p-4 mt-8 w-full">
-      <div class="container mx-auto text-center">
-        <p>© 2025 David Pazán</p>
-      </div>
-    </footer>
+    <Footer client:load />
   </body>
 </html>

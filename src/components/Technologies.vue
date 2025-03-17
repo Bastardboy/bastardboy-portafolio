@@ -1,5 +1,5 @@
 <template>
-  <section class="technologies-view p-4 bg-white dark:bg-gray-800 text-black dark:text-white">
+  <section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
     <h2 class="mb-8 text-center group cursor-default">
       <div class="inline-block relative">
         <span class="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent">
@@ -12,60 +12,56 @@
       </div>
     </h2>
 
-    <!-- Grid de tarjetas -->
     <div
       :class="[
-        'grid gap-4 justify-items-center transition-all duration-500',
-        selectedCategory ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+        'grid gap-4 mx-auto transition-all duration-500',
+        selectedCategory ? 'grid-cols-1 max-w-3xl' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl'
       ]"
     >
       <transition
         v-for="category in categories"
         :key="category.type"
-        enter-active-class="transition-all duration-300 ease-out"
-        leave-active-class="transition-all duration-200 ease-in"
-        enter-from-class="opacity-0 translate-y-4"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-4"
+        enter-active-class="transition-[opacity,transform] duration-300 ease-out"
+        leave-active-class="transition-[opacity,transform] duration-200 ease-in"
+        enter-from-class="opacity-0 scale-95"
+        enter-to-class="opacity-100 scale-100"
+        leave-from-class="opacity-100 scale-100"
+        leave-to-class="opacity-0 scale-90"
       >
         <div
           v-show="shouldShowCard(category.type)"
-          class="card p-4 rounded-lg cursor-pointer transition-all duration-300 border bg-white dark:bg-gray-700 shadow-md"
-          :class="[
-            selectedCategory === category.type ? 'border-blue-300 dark:border-blue-600 scale-[1.02] max-w-md w-full' : 'border-gray-200 dark:border-gray-600 hover:scale-[1.02] w-full',
-            !selectedCategory ? 'w-full' : 'justify-self-center'
-          ]"
+          class="card border shadow-md hover:shadow-xl p-6 rounded-xl transition-transform duration-300"
+          :class="{
+            'border-blue-400 scale-[1.02]': selectedCategory === category.type,
+            'hover:scale-[1.02]': selectedCategory !== category.type
+          }"
           @click="toggleCategory(category.type)"
+          style="background-color: var(--card-color); color: var(--text-color); border-color: var(--card-color);"
         >
-          <h3 class="text-lg font-semibold flex items-center justify-between">
+          <h3 class="text-xl font-semibold flex items-center justify-between mb-4">
             <span class="text-gray-800 dark:text-gray-100">{{ category.type }}</span>
             <i
-              class="fas fa-chevron-down text-sm transform transition-transform duration-300 text-blue-500 dark:text-blue-300"
+              class="fas fa-chevron-down text-sm transform transition-transform duration-300 text-blue-500 dark:text-blue-400"
               :class="{ 'rotate-180': selectedCategory === category.type }"
             ></i>
           </h3>
 
-          <!-- Contenido desplegable sin fondo -->
-          <div v-if="selectedCategory === category.type" class="mt-4">
+          <div v-if="selectedCategory === category.type" class="mt-4 space-y-3">
             <ul class="space-y-3">
               <li
                 v-for="tech in category.technologies"
                 :key="tech.name"
-                class="flex items-center p-2 rounded-md group"
+                class="flex items-center p-3 rounded-lg bg-transparent dark:bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                style="background-color: var(--card-color); color: var(--text-color);"
               >
                 <i
                   :class="tech.icon"
-                  class="mr-3 text-lg w-6 text-center text-blue-500 dark:text-blue-300"
+                  class="mr-3 text-xl w-6 text-center text-blue-500 dark:text-blue-400"
                 ></i>
-                <span
-                  class="flex-1 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                >
-                  {{ tech.name }}
-                </span>
+                <span class="flex-1 text-gray-700 dark:text-gray-300">{{ tech.name }}</span>
                 <span
                   v-if="tech.level && tech.level !== 'N/A'"
-                  class="text-sm px-2 py-1 rounded-full bg-blue-100/50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300"
+                  class="text-sm px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 ml-4"
                 >
                   {{ tech.level }}
                 </span>
@@ -97,10 +93,10 @@ const categories = ref([
     technologies: [
       { name: "Flask", level: "Intermedio", icon: "fas fa-flask" },
       { name: "React", level: "Intermedio", icon: "fab fa-react" },
-      { name: "Express", level: "Intermedio", icon: "fas fa-server" },
+      { name: "Express", level: "Intermedio", icon: "fas fa-terminal" },
       { name: "Node.js", level: "Intermedio", icon: "fab fa-node-js" },
       { name: "CAKEPHP", level: "Básico", icon: "fas fa-birthday-cake" },
-      { name: "Django", level: "Básico", icon: "fas fa-leaf" },
+      { name: "Django", level: "Intermedio", icon: "fas fa-terminal"},
     ],
   },
   {
@@ -114,9 +110,9 @@ const categories = ref([
     ],
   },
   {
-    type: "Nube",
+    type: "Servicios Nube",
     technologies: [
-      { name: "AWS", level: "Básico", icon: "fab fa-aws" },
+      { name: "AWS", level: "Intermedio", icon: "fab fa-aws" },
       { name: "Azure", level: "Básico", icon: "fab fa-microsoft" },
       { name: "GCP", level: "Básico", icon: "fab fa-google" },
     ],
@@ -148,4 +144,3 @@ const shouldShowCard = (type: string) => {
   return !selectedCategory.value || selectedCategory.value === type;
 };
 </script>
-

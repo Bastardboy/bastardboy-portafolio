@@ -1,60 +1,61 @@
 <template>
-  <section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl mx-auto p-6">
+  <section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
     <!-- Contenedor de Información -->
-    <div class="md:flex-1 md:order-1 w-full">
+    <div class="md:flex-1 md:order-1 w-full max-w-prose mx-auto">
       <!-- Nombre Centrado -->
-      <h2 class="mb-6 text-center group cursor-default">
-        <div class="inline-block relative">
-          <span class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent px-2">
+      <div class="text-center mb-8 group cursor-default">
+        <h2 class="inline-block relative">
+          <span class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent px-4">
             {{ name }}
           </span>
-          <div class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left mx-2"></div>
-        </div>
-      </h2>
-      <p class="text-sm font-light text-center mb-2 text-gray-400 dark:text-gray-500 flex items-center justify-center gap-1">
-        <i class="fas fa-mouse-pointer text-xs animate-bounce"></i>
-        <span class="animate-pulse">Click en la imagen</span>
-      </p>
+          <div class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left mx-4"></div>
+        </h2>
+        <p class="mt-4 text-sm font-light text-gray-400 dark:text-gray-500 flex items-center justify-center gap-2">
+          <i class="fas fa-mouse-pointer text-xs animate-bounce"></i>
+          <span class="animate-pulse">Click en la imagen para alternar información</span>
+        </p>
+      </div>
 
       <!-- Lista de Información -->
       <transition
         mode="out-in"
         enter-active-class="transition-opacity duration-500 ease-out"
         leave-active-class="transition-opacity duration-300 ease-in"
-        enter-from-class="opacity-0"
-        enter-to-class="opacity-100"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
+        enter-from-class="opacity-0 translate-x-4"
+        enter-to-class="opacity-100 translate-x-0"
+        leave-from-class="opacity-100 translate-x-0"
+        leave-to-class="opacity-0 -translate-x-4"
       >
-        <ul v-if="aboutMe.info" :key="'info-list'" class="space-y-4 pl-6">
+        <ul v-if="aboutMe.info" :key="'info-list'" class="space-y-4">
           <li 
             v-for="(desc, index) in aboutMe.info" 
             :key="index" 
-            class="text-gray-700 dark:text-gray-300 flex items-start"
+            class="flex items-start p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
+            :style="{ backgroundColor: 'var(--card-color)', color: 'var(--text-color)' }"
           >
-            <i class="fas fa-check-circle mt-1 mr-3 text-lg text-blue-500 dark:text-blue-400"></i>
-            <span class="flex-1">{{ desc }}</span>
+            <i class="fas fa-check-circle mt-1 mr-4 text-xl text-blue-500 dark:text-blue-400"></i>
+            <span class="flex-1 text-lg">{{ desc }}</span>
           </li>
         </ul>
       </transition>
     </div>
 
     <!-- Contenedor de Imagen -->
-    <div class="md:w-1/3 md:order-2 flex justify-center">
+    <div class="md:w-1/3 md:order-2 flex justify-center items-center">
       <transition
         mode="out-in"
-        enter-active-class="transition-opacity duration-500 ease-out"
-        leave-active-class="transition-opacity duration-300 ease-in"
-        enter-from-class="opacity-0"
-        enter-to-class="opacity-100"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
+        enter-active-class="transition-[opacity,transform] duration-500 ease-out"
+        leave-active-class="transition-[opacity,transform] duration-300 ease-in"
+        enter-from-class="opacity-0 scale-95"
+        enter-to-class="opacity-100 scale-100"
+        leave-from-class="opacity-100 scale-100"
+        leave-to-class="opacity-0 scale-90"
       >
         <div 
           :key="aboutMe.image"
           @click="changeInfo" 
           title="Apretar para cambiar la información"
-          class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-600 cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300"
+          class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-600 cursor-pointer shadow-2xl hover:shadow-3xl transition-all"
         >
           <img 
             :src="aboutMe.image" 

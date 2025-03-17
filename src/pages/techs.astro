@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Technologies from "../components/Technologies.vue";
 import Header from "../components/Header.vue";
-
+import Footer from "../components/footer.vue";
 const initialTheme = "light";
 ---
 
@@ -40,10 +40,6 @@ const initialTheme = "light";
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-blue-900 text-white p-4 mt-8">
-      <div class="container mx-auto text-center">
-        <p>© 2025 David Pazán</p>
-      </div>
-    </footer>
+    <Footer client:load />
   </body>
 </html>
