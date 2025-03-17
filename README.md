@@ -8,7 +8,7 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 
 ## 🌐 Demo
 
-🔗 [Ver la demo en Vercel]([https://bastardboy-portafolio.vercel.app/])
+🔗 [Ver la demo en Vercel](https://bastardboy-portafolio.vercel.app/)
 
 ## 🛠️ Tecnologías Utilizadas
 
