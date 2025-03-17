@@ -2,10 +2,11 @@
   <header class="bg-blue-900 text-white p-4 sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <!-- Logo o título -->
+      <a href="/" class="text-2xl font-bold font-mono tracking-wide">
       <h1 class="text-2xl md:text-3xl font-bold font-mono tracking-wide">
         David Pazán
       </h1>
-
+    </a>
       <!-- Menú de navegación -->
       <nav class="hidden md:flex space-x-8">
         <a 
