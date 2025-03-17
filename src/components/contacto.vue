@@ -1,16 +1,17 @@
 <template>
   <!-- Sección de Contacto -->
-  <section class="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
-    <div class="flex justify-center items-center py-16 px-4 bg-white dark:bg-[#161B22] w-full">
-      <div class="max-w-4xl mx-auto text-center">
-        <div class="mb-12 group cursor-default">
+  <section class="flex flex-col items-center justify-center w-full max-w-7xl mx-auto p-6 flex-1">
+    <div class="flex justify-center items-center w-full py-8 md:py-12">
+      <div class="max-w-4xl w-full mx-auto text-center">
+        <!-- Contenido sin cambios -->
+        <div class="mb-8 md:mb-12 group cursor-default">
           <h2 class="inline-block relative text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent px-4">
             Contacto
             <div class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left mx-4"></div>
           </h2>
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-6 md:space-y-8">
           <p class="text-xl md:text-2xl text-center text-gray-700 dark:text-gray-300">
             ¡Hablemos! Contáctame a través de mis redes profesionales
           </p>
