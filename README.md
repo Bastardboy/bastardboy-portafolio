@@ -1,4 +1,4 @@
-# 🚀 Prueba Técnica - Landing Page con Astro.js
+# 🚀 Portafolio David Pazán **Bastardboy**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -8,7 +8,7 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 
 ## 🌐 Demo
 
-🔗 [Ver la demo en Vercel](https://tu-url-de-vercel-aqui.com)
+🔗 [Ver la demo en Vercel]([https://bastardboy-portafolio.vercel.app/])
 
 ## 🛠️ Tecnologías Utilizadas
 
