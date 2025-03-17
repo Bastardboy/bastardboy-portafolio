@@ -5,7 +5,7 @@
 .technologies-view .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem; /* antes 1.5rem */
+  gap: 2rem;
 }
 
 .technologies-view .bg-gray-100 {
@@ -96,54 +96,49 @@
 }
 
 :root {
-  --background-color: #FFFFFF;   /* FONDO BLANCO EN MODO CLARO */
-  --text-color: #000000;         /* TEXTO NEGRO EN MODO CLARO */
-  --card-color: #F1F1F1;         /* Color de tarjeta claro */
-  --accent-color: #007BFF;       /* Azul, o el que elijas */
-  --hover-color: #0056b3;        /* Hover azul más oscuro */
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+  --card-color: #F1F1F1;
+  --accent-color: #007BFF;
+  --header-color: #161B22;
 }
 
 .dark {
-  --background-color: #161B22;   /* FONDO OSCURO EN DARK MODE */
-  --text-color: #C9D1D9;         /* TEXTO CLARO EN DARK MODE */
-  --card-color: #21262D;         /* Color de tarjeta oscuro */
-  --accent-color: #58A6FF;       /* Azul claro */
-  --hover-color: #79C0FF;        /* Hover azul más brillante */
+  --background-color: #161B22;
+  --text-color: #C9D1D9;
+  --card-color: #21262D;
+  --accent-color: #58A6FF;
+  --header-color: #161B22;
 }
 
 html {
   background-color: var(--background-color);
 }
 
-/* Asegúrate de que el html y body ocupen toda la altura */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* Estilo para el body usando Flexbox */
 body {
   display: flex;
-  flex-direction: column; /* Los elementos se apilan verticalmente */
-  justify-content: space-between; /* El contenido se distribuye dejando el footer al final */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Esto asegura que el contenido principal ocupe el espacio restante */
 main {
-  flex: 1 0 auto; /* El contenido principal toma el espacio disponible */
+  flex: 1 0 auto;
 }
 
-/* Agrega los estilos para el footer */
 footer {
   padding: 16px;
-  background-color: #1E3A8A; /* Asegúrate de que el color coincida */
+  background-color: #1E3A8A;
   text-align: center;
   position: relative;
   width: 100%;
   color: #fff;
 }
 
-/* Tipografía */
 body {
   display: flex;
   flex-direction: column;
@@ -162,7 +157,6 @@ p, span, a, li, div {
   font-weight: 400;
 }
 
-/* Estilos para los enlaces */
 a {
   color: var(--accent-color);
   transition: color 0.3s ease;
@@ -172,7 +166,6 @@ a:hover {
   color: var(--hover-color);
 }
 
-/* Estilos para las tarjetas y secciones */
 .card, .section {
   background-color: var(--card-color);
   color: var(--text-color);
@@ -196,7 +189,6 @@ a:hover {
   animation: subtle-bounce 2s ease-in-out infinite;
 }
 
-/* Transición suave para el cambio de contenido */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
