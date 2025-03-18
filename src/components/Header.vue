@@ -22,10 +22,10 @@
       </nav>
 
       <!-- Botón de cambio de tema -->
-      <ThemeSwitcher client:load/>
+      <ThemeSwitcher client:load class="mr-4"/>
 
       <!-- Menú hamburguesa animado a X -->
-      <div class="md:hidden">
+      <div class="md:hidden ml-2">
         <button 
           @click="toggleMenu"
           class="text-white hover:text-gray-300 transition-colors relative w-8 h-8"
