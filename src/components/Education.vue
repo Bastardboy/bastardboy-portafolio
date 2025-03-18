@@ -1,5 +1,5 @@
 <template>
-	<section class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh] items-start">
+	<section class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto p-6 flex-1 pt-20 md:pt-32 items-start">
 	  <!-- Columna Educación -->
 	  <div class="md:col-span-1 h-full flex flex-col">
 		<div class="text-center mb-8 group cursor-default min-h-[150px] flex items-center justify-center">
