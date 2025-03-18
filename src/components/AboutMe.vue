@@ -1,74 +1,74 @@
 <template>
-  <section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
-    <!-- Contenedor de Información -->
-    <div class="md:flex-1 md:order-1 w-full max-w-prose mx-auto">
-      <!-- Nombre Centrado -->
-      <div class="text-center mb-8 group cursor-default">
-        <h2 class="inline-block relative">
-          <span class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent px-4">
-            {{ name }}
-          </span>
-          <div class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left mx-4"></div>
-        </h2>
-        <p class="mt-4 text-sm font-light text-gray-400 dark:text-gray-500 flex items-center justify-center gap-2">
-          <i class="fas fa-mouse-pointer text-xs animate-bounce"></i>
-          <span class="animate-pulse">Click en la imagen para alternar información</span>
-        </p>
-      </div>
-
-      <!-- Lista de Información con transición en el contenido interno -->
-      <ul v-if="aboutMe.info" class="space-y-4">
-        <li 
-          v-for="(desc, index) in aboutMe.info"
-          :key="index"
-          class="flex items-start p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
-          :style="{ backgroundColor: 'var(--card-color)', color: 'var(--text-color)' }"
-        >
-          <transition
-            mode="out-in"
-            enter-active-class="transition-opacity duration-500 ease-out"
-            leave-active-class="transition-opacity duration-300 ease-in"
-            enter-from-class="opacity-0"
-            enter-to-class="opacity-100"
-            leave-from-class="opacity-100"
-            leave-to-class="opacity-0"
-          >
-            <div :key="desc" class="flex items-start">
-              <i class="fas fa-check-circle mt-1 mr-4 text-xl text-blue-500 dark:text-blue-400"></i>
-              <span class="flex-1 text-lg">{{ desc }}</span>
-            </div>
-          </transition>
-        </li>
-      </ul>
+<section class="flex flex-col md:flex-row items-center gap-8 w-full max-w-7xl mx-auto p-6 min-h-[70vh]">
+  <!-- Contenedor de Información -->
+  <div class="md:flex-1 md:order-1 w-full max-w-prose mx-auto flex flex-col justify-center">
+    <!-- Nombre Centrado -->
+    <div class="text-center mb-8 group cursor-default">
+      <h2 class="inline-block relative">
+        <span class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent px-4">
+          {{ name }}
+        </span>
+        <div class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left mx-4"></div>
+      </h2>
+      <p class="mt-4 text-sm font-light text-gray-400 dark:text-gray-500 flex items-center justify-center gap-2">
+        <i class="fas fa-mouse-pointer text-xs animate-bounce"></i>
+        <span class="animate-pulse">Click en la imagen para alternar información</span>
+      </p>
     </div>
 
-    <!-- Contenedor de Imagen -->
-    <div class="md:w-1/3 md:order-2 flex justify-center items-center">
-      <transition
-        mode="out-in"
-        enter-active-class="transition-[opacity,transform] duration-500 ease-out"
-        leave-active-class="transition-[opacity,transform] duration-300 ease-in"
-        enter-from-class="opacity-0 scale-95"
-        enter-to-class="opacity-100 scale-100"
-        leave-from-class="opacity-100 scale-100"
-        leave-to-class="opacity-0 scale-90"
+    <!-- Lista de Información con transición en el contenido interno -->
+    <ul v-if="aboutMe.info" class="space-y-4">
+      <li 
+        v-for="(desc, index) in aboutMe.info"
+        :key="index"
+        class="flex items-center p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
+        :style="{ backgroundColor: 'var(--card-color)', color: 'var(--text-color)' }"
       >
-        <div 
-          :key="aboutMe.image"
-          @click="changeInfo" 
-          title="Apretar para cambiar la información"
-          class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-600 cursor-pointer shadow-2xl hover:shadow-3xl transition-all"
+        <transition
+          mode="out-in"
+          enter-active-class="transition-opacity duration-500 ease-out"
+          leave-active-class="transition-opacity duration-300 ease-in"
+          enter-from-class="opacity-0"
+          enter-to-class="opacity-100"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
         >
-          <img 
-            :src="aboutMe.image" 
-            :alt="aboutMe.alt" 
-            loading="lazy" 
-            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-          >
-        </div>
-      </transition>
-    </div>
-  </section>
+          <div :key="desc" class="flex items-center">
+            <i class="fas fa-check-circle mt-1 mr-4 text-xl text-blue-500 dark:text-blue-400"></i>
+            <span class="flex-1 text-lg">{{ desc }}</span>
+          </div>
+        </transition>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenedor de Imagen -->
+  <div class="md:w-1/3 md:order-2 flex justify-center items-center flex-col mt-20">
+    <transition
+      mode="out-in"
+      enter-active-class="transition-[opacity,transform] duration-500 ease-out"
+      leave-active-class="transition-[opacity,transform] duration-300 ease-in"
+      enter-from-class="opacity-0 scale-95"
+      enter-to-class="opacity-100 scale-100"
+      leave-from-class="opacity-100 scale-100"
+      leave-to-class="opacity-0 scale-90"
+    >
+      <div 
+        :key="aboutMe.image"
+        @click="changeInfo" 
+        title="Apretar para cambiar la información"
+        class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-600 cursor-pointer shadow-2xl hover:shadow-3xl transition-all"
+      >
+        <img 
+          :src="aboutMe.image" 
+          :alt="aboutMe.alt" 
+          loading="lazy" 
+          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+        >
+      </div>
+    </transition>
+  </div>
+</section>
 </template>
 
 <script setup lang="ts">
