@@ -1,6 +1,6 @@
 <template>
   <!-- Sección de Contacto -->
-  <section class="flex flex-col items-center justify-center w-full max-w-7xl mx-auto p-6 flex-1">
+  <section class="flex flex-col items-center justify-center w-full max-w-7xl mx-auto p-6 flex-1 pt-20 md:pt-32">
     <div class="flex justify-center items-center w-full py-8 md:py-12">
       <div class="max-w-4xl w-full mx-auto text-center">
         <!-- Contenido sin cambios -->
