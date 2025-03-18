@@ -1,48 +1,25 @@
 ---
 import "../styles/global.css";
-
+import Layout from "../layouts/Layout.astro";
 const initialTheme = "light";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sobre David Pazán, Ingeniero Civil Informático y desarrollador web"
-    />
-    <title>David Page</title>
-    <link rel="icon" href="/favicon.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body
-    class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white font-sans transition-colors duration-300"
+<Layout>
+  <!-- Splash Screen -->
+  <section
+    id="splash"
+    class="fixed inset-0 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white z-50"
   >
-    <!-- Splash Screen -->
-    <section
-      id="splash"
-      class="fixed inset-0 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white z-50"
-    >
-      <div class="text-center">
-        <h1 class="text-5xl font-bold mb-4">Hola, soy David Pazán</h1>
-        <p class="text-xl mb-6">
-          Ingeniero Civil Informático y apasionado por el desarrollo web
-        </p>
-        <a
-          href="/aboutme"
-          class="bg-white text-gray-900 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-all"
-          >Conocer más</a
-        >
-      </div>
-    </section>
-  </body>
-</html>
+    <div class="text-center">
+      <h1 class="text-5xl font-bold mb-4">Hola, soy David Pazán</h1>
+      <p class="text-xl mb-6">
+        Ingeniero Civil Informático y apasionado por el desarrollo web
+      </p>
+      <a
+        href="/aboutme"
+        class="bg-white text-gray-900 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-all"
+        >Conocer más</a
+      >
+    </div>
+  </section>
+</Layout>
