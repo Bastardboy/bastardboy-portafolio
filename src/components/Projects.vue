@@ -112,7 +112,7 @@ const projects = ref([
     title: "E-commerce",
     categories: "Académico, Ingeniería de Software",
     description: "Desarrollo de una plataforma de comercio electrónico con pasarela de pago.",
-    technologies: ["fab fa-js","fab fa-react", "fab fa-node-js", "fas fa-code", "fas fa-database"],
+    technologies: ["fab","fab fa-react", "fab fa-node-js", "fas fa-code", "fas fa-database"],
     focus: "Full Stack"
   },
   {

@@ -54,16 +54,49 @@
             </a>
           </div>
 
+          <!-- Información de contacto -->
           <div class="mt-8 pt-8 border-t border-gray-200/50 dark:border-gray-700/50">
             <p class="text-center text-gray-600 dark:text-gray-400">
-              O envíame un correo a:<br>
-              <a href="mailto:davidpazan2@gmail.com" class="text-blue-500 dark:text-blue-400 hover:underline text-lg md:text-xl">
-                ¡Haciendo click aquí!
-              </a>
+              O envíame un correo haciendo click:
             </p>
+
+            <!-- Botón con estilo -->
+            <div class="flex justify-center items-center gap-6 mt-4 ">
+              <div class="flex flex-col gap-2 p-8 sm:flex-row sm:items-center sm:gap-6 sm:py-4">
+                <img class="mx-auto block h-24 rounded-full sm:mx-0 sm:shrink-0" src="images/David1.webp" alt="Imagen de contacto" />
+                <div class="space-y-2 text-center sm:text-left">
+                  <div class="space-y-0.5">
+                    <p class="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 bg-clip-text text-transparent">
+                      {{ name }}
+                    </p>
+                  </div>
+                  <button
+                    @click="sendEmail"
+                    class="border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-200 hover:bg-purple-600 dark:hover:bg-purple-700 hover:text-white dark:hover:text-white active:bg-purple-700 dark:active:bg-purple-800 px-6 py-2 rounded-lg transition-all duration-300 hover:border-purple-700 dark:hover:border-purple-500"
+                  >
+                    Enviar Correo
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      name: "David Pazán" 
+    };
+  },
+  methods: {
+    sendEmail() {
+      window.location.href = 'mailto:davidpazan2@gmail.com';
+    }
+  }
+}
+</script>
