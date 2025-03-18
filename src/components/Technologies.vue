@@ -97,6 +97,7 @@ const categories = ref([
       { name: "Node.js", level: "Intermedio", icon: "fab fa-node-js" },
       { name: "CAKEPHP", level: "Básico", icon: "fas fa-birthday-cake" },
       { name: "Django", level: "Intermedio", icon: "fas fa-terminal"},
+      { name: "Vue", level: "Básico", icon: "fab fa-vuejs" },
     ],
   },
   {
