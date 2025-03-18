@@ -70,12 +70,14 @@
                       {{ name }}
                     </p>
                   </div>
-                  <button
-                    @click="sendEmail"
-                    class="border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-200 hover:bg-purple-600 dark:hover:bg-purple-700 hover:text-white dark:hover:text-white active:bg-purple-700 dark:active:bg-purple-800 px-6 py-2 rounded-lg transition-all duration-300 hover:border-purple-700 dark:hover:border-purple-500"
+                  <a
+                    role="button"
+                    :href="mailtoLink"
+                    @click.prevent="sendEmail"
+                    class="border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-200 hover:bg-purple-600 dark:hover:bg-purple-700 hover:text-white dark:hover:text-white active:bg-purple-700 dark:active:bg-purple-800 px-6 py-2 rounded-lg transition-all duration-300 hover:border-purple-700 dark:hover:border-purple-500 cursor-pointer"
                   >
                     Enviar Correo
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -90,13 +92,47 @@
 export default {
   data() {
     return {
-      name: "David Pazán" 
+      name: "David Pazán",
+      // Configuramos el mailto con parámetros codificados
+      mailtoLink: 'mailto:davidpazan2@gmail.com?subject=Contacto%20desde%20Portfolio&body=Hola%20David,'
     };
   },
   methods: {
-    sendEmail() {
-      window.location.href = 'mailto:davidpazan2@gmail.com';
+    async sendEmail() {
+      try {
+        // Método 1: Intento principal para desktop
+        if (this.isMobile()) {
+          // Método específico para móviles
+          window.open(this.mailtoLink, '_system');
+        } else {
+          // Método estándar para navegadores de escritorio
+          window.location.href = this.mailtoLink;
+        }
+
+        // Método 2: Fallback después de 300ms
+        await new Promise(resolve => setTimeout(resolve, 300));
+        if (!document.hidden) {
+          window.open('https://mail.google.com/mail/?view=cm&fs=1&to=davidpazan2@gmail.com', '_blank');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        // Método 3: Copiar al portapapeles como último recurso
+        await this.copyToClipboard();
+      }
+    },
+    isMobile() {
+      // Detectar dispositivos móviles de forma precisa
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    },
+    async copyToClipboard() {
+      try {
+        await navigator.clipboard.writeText('davidpazan2@gmail.com');
+        alert('Email copiado: davidpazan2@gmail.com');
+      } catch (err) {
+        console.error('Error al copiar:', err);
+        alert('Por favor copia manualmente: davidpazan2@gmail.com');
+      }
     }
   }
-}
+};
 </script>
