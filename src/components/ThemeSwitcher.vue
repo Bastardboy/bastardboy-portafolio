@@ -29,36 +29,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
-// Estado reactivo para el tema actual
 const theme = ref('light');
 
-// Al montar el componente, se obtiene el tema guardado en localStorage
 onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    theme.value = savedTheme;
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }
+  theme.value = document.documentElement.getAttribute('data-theme') || 'light';
 });
 
-// Función para alternar el tema
 const toggleTheme = () => {
-  const htmlElement = document.documentElement;
   theme.value = theme.value === 'light' ? 'dark' : 'light';
-  
-  if (theme.value === 'dark') {
-    htmlElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    htmlElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  }
-  
-  // Forzar la actualización de la clase del elemento HTML
-  htmlElement.className = htmlElement.className; 
+  document.documentElement.classList.toggle('dark');
+  document.documentElement.setAttribute('data-theme', theme.value);
+  localStorage.setItem('theme', theme.value);
 };
 </script>

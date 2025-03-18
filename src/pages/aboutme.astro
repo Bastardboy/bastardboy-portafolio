@@ -3,44 +3,20 @@ import "../styles/global.css";
 import AboutMe from "../components/AboutMe.vue";
 import Header from "../components/Header.vue";
 import Footer from "../components/footer.vue";
+import Layout from "../layouts/Layout.astro";
 const DavidPerfil = "images/David1.webp";
 const DavidAlt = "images/David2.webp";
-
-const initialTheme = "light";
 ---
 
-<html lang="en" class={initialTheme}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sobre David Pazán, Ingeniero Civil Informático y desarrollador web"
-    />
-    <title>David Page</title>
-    <link rel="icon" href="/favicon.svg" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<Layout>
+  <!-- HEADER -->
+  <Header client:load />
 
-  <body
-    class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white font-sans transition-colors duration-300 min-h-screen flex flex-col"
-  >
-    <!-- HEADER -->
-    <Header client:load />
+  <!-- MAIN -->
+  <main class="container mx-auto p-4 flex-1">
+    <AboutMe client:load originalImage={DavidPerfil} altImage={DavidAlt} />
+  </main>
 
-    <!-- MAIN -->
-    <main class="container mx-auto p-4 flex-1">
-      <AboutMe client:load originalImage={DavidPerfil} altImage={DavidAlt} />
-    </main>
-
-    <!-- FOOTER -->
-    <Footer client:load />
-  </body>
-</html>
+  <!-- FOOTER -->
+  <Footer client:load />
+</Layout>
