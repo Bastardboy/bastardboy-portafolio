@@ -3,10 +3,11 @@
     <div class="container mx-auto flex justify-between items-center">
       <!-- Logo o título -->
       <a href="/" class="text-2xl font-bold font-mono tracking-wide">
-      <h1 class="text-2xl md:text-3xl font-bold font-mono tracking-wide">
-        David Pazán
-      </h1>
-    </a>
+        <h1 class="text-2xl md:text-3xl font-bold font-mono tracking-wide">
+          David Pazán
+        </h1>
+      </a>
+
       <!-- Menú de navegación -->
       <nav class="hidden md:flex space-x-8">
         <a 
@@ -23,25 +24,31 @@
       <!-- Botón de cambio de tema -->
       <ThemeSwitcher client:load/>
 
-      <!-- Menú hamburguesa para dispositivos pequeños -->
+      <!-- Menú hamburguesa animado a X -->
       <div class="md:hidden">
         <button 
           @click="toggleMenu"
-          class="text-white hover:text-gray-300 transition-colors"
+          class="text-white hover:text-gray-300 transition-colors relative w-8 h-8"
         >
-          <svg 
-            class="w-8 h-8"
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+          <div class="absolute inset-0 transform transition-all duration-300">
+            <!-- Línea superior -->
+            <span 
+              class="absolute left-0 w-full h-[2px] bg-current transform transition-all duration-300"
+              :class="isMenuOpen ? 'rotate-45 top-1/2 -translate-y-1/2' : 'top-0 -translate-y-1'"
+            ></span>
+            
+            <!-- Línea media -->
+            <span 
+              class="absolute left-0 w-full h-[2px] bg-current transform transition-all duration-300 top-1/2 -translate-y-1/2"
+              :class="isMenuOpen ? 'opacity-0' : 'opacity-100'"
+            ></span>
+            
+            <!-- Línea inferior -->
+            <span 
+              class="absolute left-0 w-full h-[2px] bg-current transform transition-all duration-300"
+              :class="isMenuOpen ? '-rotate-45 top-1/2 -translate-y-1/2' : 'bottom-0 translate-y-1'"
+            ></span>
+          </div>
         </button>
       </div>
     </div>

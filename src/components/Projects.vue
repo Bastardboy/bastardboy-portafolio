@@ -111,28 +111,28 @@ const projects = ref([
   {
     title: "E-commerce",
     categories: "Académico, Ingeniería de Software",
-    description: "Desarrollo de una plataforma de comercio electrónico con pasarela de pago.",
+    description: "Desarrollo de una plataforma de comercio electrónico con pasarela de pago. Principalmente la función fue realizar la conexiónes de la base de datos, querys para el manejo de datos, el correcto funcionaminto del backend y arreglos de la parte frontend.",
     technologies: ["fab","fab fa-react", "fab fa-node-js", "fas fa-code", "fas fa-database"],
     focus: "Full Stack"
   },
   {
     title: "Proyecto Software Pruebas Escolares",
     categories: "Académico, Arquitectura de Software",
-    description: "Desarrollo de un sistema para realizar pruebas escolares.",
+    description: "Se realiza un sistema para realizar pruebas escolares y obtener las notas en base a sus respuestas. Se trabajó en la creación de microservicios, el cual se conectaba hacia un bus de servicios ofrecido por la universidad para entender el funcionamiento y la comunicación que se genera.",
     technologies: ["fab fa-js", "fas fa-code", "fas fa-cogs", "fas fa-server"],
     focus: "Backend"
   },
   {
     title: "Apoyo con sistemas de gestión interna",
     categories: "Práctica Profesional",
-    description: "Asistencia en el desarrollo de aplicaciones internas de la empresa.",
+    description: "Asistencia en el desarrollo de aplicaciones internas de la empresa. El principal trabajo fue la mejora en sistemas que consumian APIs de terceros, para realizar cálculos solicitados.",
     technologies: ["fab fa-php", "fas fa-database"],
     focus: "Backend"
   },
   {
     title: "Gestor de Documentos",
     categories: "Práctica profesional",
-    description: "Sistema para descarga masiva de documentos. Optimización de limpieza de Excels.",
+    description: "Sistema de descarga masiva de documentos que permitió al equipo evitar descargas individuales mediante un enlace modificado. Además, se implementaron funciones para limpiar archivos Excel eliminando caracteres especiales, logrando entregar de forma más rápida la información, además de consolidar datos, asegurando la inclusión de las columnas necesarias por el usuario.",
     technologies: ["fab fa-python", "fas fa-flask", "fas fa-chart-line", "fab fa-microsoft"],
     focus: "Fullstack"
   }
