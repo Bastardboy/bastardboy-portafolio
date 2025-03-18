@@ -27,7 +27,6 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 - ✔️ Diseño completamente responsivo
 
 ## 📂 Estructura del Proyecto
-
 ```bash
 /
 ├── public/
@@ -37,20 +36,30 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 │       └── David2.webp
 ├── src/
 │   ├── components/
-│   │   ├── aboutme.astro
-│   │   ├── projects.astro
-│   │   ├── technologies.astro
+│   │   ├── AboutMe.vue
+│   │   ├── contacto.vue
+│   │   ├── Education.vue
+│   │   ├── footer.vue
+│   │   ├── Header.vue
+│   │   ├── Projects.vue
+│   │   ├── Technologies.vue
 │   │   └── ThemeSwitcher.vue
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
-│   │   └── index.astro
+│   │   ├── aboutme.astro
+│   │   ├── contact.astro
+│   │   ├── index.astro
+│   │   ├── project.astro
+│   │   ├── studies.astro
+│   │   └── techs.astro
 │   ├── styles/
 │   │   └── global.css
 ├── astro.config.mjs
 ├── package.json
 ├── package-lock.json
 ├── tsconfig.json
+├── tailwind.config.js
 └── README.md
 ```
 
