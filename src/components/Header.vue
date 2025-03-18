@@ -21,7 +21,7 @@
       </nav>
 
       <!-- Botón de cambio de tema -->
-      <ThemeSwitcher client:only="vue"/>
+      <ThemeSwitcher client:load/>
 
       <!-- Menú hamburguesa para dispositivos pequeños -->
       <div class="md:hidden">
@@ -66,11 +66,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import ThemeSwitcher from './ThemeSwitcher.vue';
 
+// 1. Estado inicial del menú
 const isMenuOpen = ref(false);
 
+// 2. Links de navegación (deberías mover esto a un archivo de configuración)
 const links = [
   { name: 'Sobre mí', path: '/aboutme' },
   { name: 'Proyectos', path: '/project' },
@@ -79,26 +81,34 @@ const links = [
   { name: 'Contacto', path: '/contact' }
 ];
 
+// 3. Sincronización del tema con el componente ThemeSwitcher
+onMounted(() => {
+  // Forzar sincronización inicial del tema
+  const initialTheme = document.documentElement.getAttribute('data-theme');
+  if (initialTheme) {
+    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+  }
+});
+
+// 4. Modificar la directiva del ThemeSwitcher (importante!)
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 </script>
 
-<style scoped>
-.nav-link {
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.03em;
-}
-
+<!-- Añade esto en tu CSS -->
+<style>
+/* Transición suave para el menú móvil */
 .nav-link-mobile {
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.05em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@supports (font-variation-settings: normal) {
-  .nav-link, .nav-link-mobile {
-    font-family: 'Inter var', sans-serif;
-  }
+/* Evitar FOUC en el tema */
+[vue\:not-loaded] .theme-switcher {
+  opacity: 0;
+}
+[vue\:loaded] .theme-switcher {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 </style>

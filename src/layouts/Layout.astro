@@ -28,7 +28,8 @@ import Footer from "../components/footer.vue";
 
   <body class="font-sans transition-[background-color] duration-300 min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
     <!-- Header Vue solo en el cliente -->
-    <Header client:only="vue" />
+    <Header  client:load/>
+
 
     <!-- El contenido principal -->
     <main class="flex-1">
