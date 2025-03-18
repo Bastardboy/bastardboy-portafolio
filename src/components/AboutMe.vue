@@ -16,7 +16,7 @@
         </p>
       </div>
 
-      <!-- Lista de Información -->
+      <!-- Lista de Información (solo la lista tiene transición) -->
       <transition
         mode="out-in"
         enter-active-class="transition-opacity duration-500 ease-out"
@@ -69,6 +69,7 @@
   </section>
 </template>
 
+
 <script setup lang="ts">
 import { ref } from 'vue';
 
@@ -91,8 +92,9 @@ const originalInfo = {
 const alternateInfo = {
   info: [
     "Fan de los videojuegos.",
-    "Me gustan mucho las series y películas Animadas, de suspenso o Dramas.",
-    "Futbolero"
+    "Me gustan mucho las series y películas.",
+    "Futbolero.",
+    "Lectura ocasional."
   ],
   image: "/images/David2.webp",
   alt: "Foto alterna de David Pazán"
@@ -102,13 +104,10 @@ const alternateInfo = {
 const aboutMe = ref({ ...originalInfo });
 const isOriginal = ref(true);
 
-// Propiedad reactiva para el título de la sección
-const sectionTitle = ref("Sobre Mí Profesional");
 
 // Función para cambiar la información mostrada
 const changeInfo = () => {
   isOriginal.value = !isOriginal.value;
   aboutMe.value = isOriginal.value ? { ...originalInfo } : { ...alternateInfo };
-  sectionTitle.value = isOriginal.value ? "Sobre Mí Profesional" : "Sobre Mí Personal";
 };
 </script>
