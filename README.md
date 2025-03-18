@@ -67,8 +67,8 @@ Landing page moderna y responsiva desarrollada con Astro.js, Vue.js, TailwindCSS
 
 1. **Clonar repositorio**
 ```bash
-git clone https://github.com/Bastardboy/ulern-test
-cd ulern-test
+git clone https://github.com/Bastardboy/bastardboy-portafolio.git
+cd bastardboy-portafolio
 ```
 
 2. **Instalar dependencias**
