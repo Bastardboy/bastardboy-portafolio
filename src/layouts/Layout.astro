@@ -1,8 +1,12 @@
+---
+import Header from "../components/Header.vue";
+import Footer from "../components/footer.vue";
+---
+
 <!DOCTYPE html>
-<html lang="en" class="[data-theme]">
+<html lang="en">
   <head>
     <script is:inline>
-      // Aplicación inmediata del tema antes de cualquier renderizado
       (() => {
         const savedTheme = localStorage.getItem('theme');
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -12,7 +16,7 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sobre David Pazán, Ingeniero Civil Informático y desarrollador web" />
@@ -21,8 +25,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
   </head>
-  
+
   <body class="font-sans transition-[background-color] duration-300 min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
-    <slot />
+    <!-- Header Vue solo en el cliente -->
+    <Header client:only="vue" />
+
+    <!-- El contenido principal -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer Vue solo en el cliente -->
+    <Footer client:load />
   </body>
 </html>

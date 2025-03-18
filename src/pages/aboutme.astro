@@ -1,22 +1,16 @@
 ---
 import "../styles/global.css";
 import AboutMe from "../components/AboutMe.vue";
-import Header from "../components/Header.vue";
-import Footer from "../components/footer.vue";
 import Layout from "../layouts/Layout.astro";
 const DavidPerfil = "images/David1.webp";
 const DavidAlt = "images/David2.webp";
 ---
 
 <Layout>
-  <!-- HEADER -->
-  <Header client:load />
 
   <!-- MAIN -->
   <main class="container mx-auto p-4 flex-1">
     <AboutMe client:load originalImage={DavidPerfil} altImage={DavidAlt} />
   </main>
 
-  <!-- FOOTER -->
-  <Footer client:load />
 </Layout>

@@ -25,6 +25,7 @@
 }
 
 .theme-switcher button {
+  backface-visibility: hidden;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -35,6 +36,7 @@
   border-radius: 9999px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  transform: translateZ(0);
 }
 
 .theme-switcher button:hover {

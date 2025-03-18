@@ -21,7 +21,7 @@
       </nav>
 
       <!-- Botón de cambio de tema -->
-      <ThemeSwitcher class="ml-4" />
+      <ThemeSwitcher client:only="vue"/>
 
       <!-- Menú hamburguesa para dispositivos pequeños -->
       <div class="md:hidden">
