@@ -1,24 +1,32 @@
 ---
-import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Technologies from "../components/Technologies.astro";
+import Projects from "../components/Projects.astro";
+import ContactMe from "../components/Contact.astro";
 ---
 
-<Layout>
-  <!-- Splash Screen -->
-  <section
-    id="splash"
-    class="fixed inset-0 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 text-white z-50"
-  >
-    <div class="text-center">
-      <h1 class="text-5xl font-bold mb-4">Hola, soy David Pazán</h1>
-      <p class="text-xl mb-6">
-        Ingeniero Civil Informático y apasionado por el desarrollo web
-      </p>
-      <a
-        href="/aboutme"
-        class="bg-white text-gray-900 px-6 py-3 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-all"
-        >Conocer más</a
-      >
-    </div>
-  </section>
+<Layout
+  title="Portfolio de David Pazán - Desarrollador y Programador Full-Stack"
+  description="Portfolio de David Pazán, Ingeniero Civil Informático y Desarrollador Full-Stack. Explora mis proyectos y habilidades en programación."
+>
+<main>
+  <Hero />
+  <AboutMe />
+  <Technologies />
+  <Projects />
+  <ContactMe />
+</main>
+
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</main>
 </Layout>
+

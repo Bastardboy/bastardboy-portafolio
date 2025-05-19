@@ -1,0 +1,145 @@
+---
+import GitHubinIcon from "../components/icons/GitHub.astro";
+
+const ProjectsArray = [
+  {
+    title: "Proyecto Ingeniería de Software",
+    date: "2021",
+    type: "Academico",
+    description:
+      "Primer proyecto desarrollado con JavaScript, React para frontend. NodeJs, Express y PostgreSQL para el backend.",
+    link: "https://github.com/nicobolton/SoftwareProject_by_NB",
+    icon: "GitHubinIcon",
+  },
+  {
+    title: "Apoyo en funcionalidades de gestión interna, Oxus",
+    date: "2022",
+    type: "Trabajo",
+    description:
+      "Tras realizar un tutorial del framework CakePHP, puede ayudar a mejorar funcionalidades indicadas por la tutora.",
+    link: "",
+    icon: "",
+  },
+  {
+    title: "Proyecto Arquitectura de Software",
+    date: "2023",
+    type: "Academico",
+    description:
+      "Desarrollo de aplicación para toma de pruebas, enfocado a estudiar la Arquitectura bus de servicio, se usó JavaScript para su desarrollo.",
+    link: "https://github.com/kukazmontero/Proyecto---Arquitectura-Software",
+    icon: "GitHubinIcon",
+  },
+  {
+    title:
+      "Limpieza de datos y automatización de descargas, GTD Manquehue.",
+    date: "2024",
+    type: "Trabajo",
+    description:
+      "Desarrollo de funcionalidades para automatizar limpieza y descarga de archivos, usando principalmente Python y Flask,.",
+    link: "https://github.com/Bastardboy/Transformaciones_Excel",
+    icon: "GitHubinIcon",
+  },
+  {
+    title:
+      "Task Manager",
+    date: "2024",
+    type: "Trabajo",
+    description:
+      "Plataforma de organización de tareas, enfocado en la accesibilidad de los usuarios, notificaciones y gestión de tareas. (Actualmente sigue en desarrollo)",
+    link: "https://github.com/Bastardboy/to-do-list",
+    icon: "GitHubinIcon",
+  },
+];
+
+// Filtrar proyectos por tipo
+const academicProjects = ProjectsArray.filter(
+  (project) => project.type === "Academico"
+);
+const workProjects = ProjectsArray.filter(
+  (project) => project.type === "Trabajo"
+);
+---
+
+<section
+  id="projects"
+  class="py-20 px-6 bg-white text-gray-800 scroll-mt-20 animate-fade-in-up"
+>
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Título principal -->
+    <div
+      class="border-4 border-gray-800 rounded-lg inline-block px-8 py-4 mb-8"
+    >
+      <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wide">
+        Proyectos
+      </h2>
+    </div>
+
+    <!-- Proyectos Académicos -->
+    <div class="mb-12">
+      <div
+        class="border-2 border-gray-800 rounded-lg inline-block px-6 py-2 mb-6"
+      >
+        <h3 class="text-xl font-bold text-gray-800 uppercase tracking-wide">
+          Académico
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 projects-grid">
+        {
+          academicProjects.map((project) => (
+            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-xl mb-2">{project.title}</h4>
+              <p class="text-gray-700">{project.description}</p>
+
+              {project.link && (
+                <div class="mt-4 flex justify-center items-center">
+                  <a
+                    href={project.link}
+                    class="text-blue-600 hover:underline flex justify-center items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.icon === "GitHubinIcon" && <GitHubinIcon />}
+                  </a>
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Proyectos de Trabajo -->
+    <div>
+      <div
+        class="border-2 border-gray-800 rounded-lg inline-block px-6 py-2 mb-6"
+      >
+        <h3 class="text-xl font-bold text-gray-800 uppercase tracking-wide">
+          Trabajo
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 projects-grid">
+        {
+          workProjects.map((project) => (
+            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h4 class="font-semibold text-xl mb-2">{project.title}</h4>
+              <p class="text-gray-700">{project.description}</p>
+
+              {project.link && (
+                <div class="mt-4 flex justify-center items-center">
+                  <a
+                    href={project.link}
+                    class="text-blue-600 hover:underline flex justify-center items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.icon === "GitHubinIcon" && <GitHubinIcon />}
+                  </a>
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+---
+import PythoninIcon from "../components/icons/Python.astro";
+import JavaScriptinIcon from "../components/icons/JavaScript.astro";
+import GitHubinIcon from "../components/icons/GitHub.astro";
+import SQLinIcon from "../components/icons/SQL.astro";
+import FlaskinIcon from "../components/icons/Flask.astro";
+import DjangoinIcon from "../components/icons/Django.astro";
+import AstroinIcon from "../components/icons/AstroIcon.astro";
+import DevopsinIcon from "../components/icons/devops.astro";
+import HtmlinIcon from "../components/icons/html.astro";
+import TailwindinIcon from "../components/icons/tailwind.astro";
+import CSSinIcon from "../components/icons/css.astro";
+import CloudinIcon from "../components/icons/cloud.astro";
+
+const categories = [
+  {
+    type: "Principales",
+    technologies: [
+      { name: "Python", icon: PythoninIcon },
+      { name: "JavaScript", icon: JavaScriptinIcon },
+      { name: "Flask", icon: FlaskinIcon },
+      { name: "GIT", icon: GitHubinIcon },
+      { name: "Stack MERN", icon: "/src/components/icons/mern-1.svg" },
+      { name: "SQL database", icon: SQLinIcon },
+    ],
+  },
+  {
+    type: "Aprendiendo",
+    technologies: [
+      { name: "Django", icon: DjangoinIcon },
+      { name: "Astro", icon: AstroinIcon},
+      { name: "DevOps", icon: DevopsinIcon},
+    ],
+  },
+
+  {
+    type: "Otros",
+    technologies: [
+      { name: "Ingles", icon: "/src/components/icons/Flag_of_the_United_States.svg" },
+      { name: "Conocimientos en la nube", icon: CloudinIcon},
+      { name: "HTML", icon: HtmlinIcon },
+      { name: "CSS", icon: CSSinIcon },
+      { name: "Tailwind CSS", icon: TailwindinIcon },
+    ],
+  },
+];
+---
+
+<section
+  id="technologies"
+  class="py-20 px-6 bg-gray-100 text-gray-800 scroll-mt-20 animate-fade-in-up"
+>
+  <div class="max-w-5xl mx-auto text-center">
+    <!-- Título principal -->
+    <div
+      class="border-4 border-gray-800 rounded-lg inline-block px-8 py-4 mb-8"
+    >
+      <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wide">
+        Tecnologías
+      </h2>
+    </div>
+
+    <!-- Categorías -->
+    <div class="space-y-12">
+  {categories.map((category, index) => (
+    <div>
+      <!-- Nombre de la categoría -->
+      <h3 class="text-2xl font-bold text-gray-800 mb-6 uppercase">
+        {category.type}
+      </h3>
+      <!-- Lista de tecnologías -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        {category.technologies.map((tech, techIndex) => (
+          <div
+            class="flex flex-col items-center text-center"
+          >
+            <!-- Ícono de la tecnología -->
+            {typeof tech.icon === "string" ? (
+              <img
+                src={tech.icon}
+                alt={tech.name}
+                class="w-16 h-16 mb-2 object-contain"
+              />
+            ) : (
+              <tech.icon class="w-16 h-16 mb-2" />
+            )}
+            <!-- Nombre de la tecnología -->
+            <span class="text-sm font-medium text-gray-700">
+              {tech.name}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Separador entre categorías -->
+      {index < categories.length - 1 && (
+        <div class="my-12">
+          <hr class="border-t-2 border-gray-300 mx-auto w-1/2" />
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+  </div>
+</section>

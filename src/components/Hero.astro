@@ -1,0 +1,66 @@
+---
+import "@fontsource/poppins";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import GitHubinIcon from "../components/icons/GitHub.astro";
+import MailinIcon from "../components/icons/Mail.astro";
+const profileImage = "/images/Foto (3).webp";
+---
+
+<div
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
+  <!-- Fondo diagonal -->
+  <div
+    class="absolute inset-0 bg-gray-100 z-0"
+    style="clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%)"
+  >
+  </div>
+
+  <div
+    class="relative z-10 flex flex-col lg:flex-row w-full max-w-7xl items-center justify-between px-6 py-12"
+  >
+    <!-- Lado izquierdo -->
+    <div class="lg:w-1/2 text-left space-y-6 text-black">
+      <div class="text-2xl font-medium">Hola, soy</div>
+      <h1 class="text-5xl lg:text-6xl font-bold">David Pazán</h1>
+      <p class="text-gray-500 text-xl font-semibold">
+        Ingeniero Civil Informático / Full-Stack Developer
+      </p>
+
+      <div class="flex space-x-4 mt-6">
+        <a
+          href="https://www.linkedin.com/in/david-pazan/"
+          class="bg-gray-300 hover:bg-gray-400 text-black rounded p-2 shadow"
+        >
+          <LinkedinIcon />
+        </a>
+        <a
+          href="https://github.com/Bastardboy/"
+          class="bg-gray-300 hover:bg-gray-400 text-black rounded p-2 shadow"
+        >
+          <GitHubinIcon />
+        </a>
+        <a
+          href="mailto:david.pazan2@gmail.com"
+          class="bg-gray-300
+          hover:bg-gray-400
+          text-black
+          rounded
+          p-2
+          shadow"
+        >
+          <MailinIcon />
+        </a>
+      </div>
+    </div>
+
+    <!-- Lado derecho -->
+    <div class="image-card bg-transparent">
+      <img
+        src={profileImage}
+        alt="Profile"
+        class="w-[480px] md:w-[390px] h-auto rounded-xl object-cover shadow-none border-none"
+      />
+    </div>
+  </div>
+</div>
