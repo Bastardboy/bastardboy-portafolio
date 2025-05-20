@@ -30,8 +30,7 @@ const ProjectsArray = [
     icon: "GitHubinIcon",
   },
   {
-    title:
-      "Limpieza de datos y automatización de descargas, GTD Manquehue.",
+    title: "Limpieza de datos y automatización de descargas, GTD Manquehue.",
     date: "2024",
     type: "Trabajo",
     description:
@@ -40,8 +39,7 @@ const ProjectsArray = [
     icon: "GitHubinIcon",
   },
   {
-    title:
-      "Task Manager",
+    title: "Task Manager",
     date: "2024",
     type: "Trabajo",
     description:
@@ -119,8 +117,15 @@ const workProjects = ProjectsArray.filter(
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 projects-grid">
         {
-          workProjects.map((project) => (
-            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
+          workProjects.map((project, index) => (
+            <div
+              class={`bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition ${
+                workProjects.length % 2 !== 0 &&
+                index === workProjects.length - 1
+                  ? "md:col-span-2 md:mx-auto"
+                  : ""
+              }`}
+            >
               <h4 class="font-semibold text-xl mb-2">{project.title}</h4>
               <p class="text-gray-700">{project.description}</p>
 
