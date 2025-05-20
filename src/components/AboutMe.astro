@@ -1,20 +1,28 @@
+---
+const text = [
+  "Soy un apasionado por la tecnología. Tengo experiencia en desarrollo Full-Stack, automatización de procesos, procesos ETL y trabajos con APIs.",
+  "Me gusta aprender y enfrentar nuevos desafíos. Actualmente, estoy buscando oportunidades para aplicar mis habilidades en proyectos interesantes.",
+];
+---
+
 <section
   id="aboutme"
-  class="py-20 px-6 bg-white text-gray-800 scroll-mt-20 animate-fade-in-up"
+  class="py-16 px-4 md:px-6 bg-white text-gray-800 scroll-mt-20 animate-fade-in-up"
 >
-  <div class="max-w-4xl mx-auto text-center">
+  <div class="max-w-xl sm:max-w-2xl md:max-w-4xl mx-auto text-center">
     <div
-      class="border-4 border-gray-800 rounded-lg inline-block px-8 py-4 mb-8"
+      class="border-4 border-gray-800 rounded-lg inline-block px-6 py-3 mb-8"
     >
-      <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wide">
+      <h2
+        class="text-2xl sm:text-3xl font-bold text-gray-800 uppercase tracking-wide"
+      >
         Acerca de mí
       </h2>
     </div>
-    <p class="text-lg">
-      Soy un apasionado por la tecnología, Tengo experiencia en desarrollo
-      Full-Stack, automatización de procesos, procesos ETL y trabajos con APIs.<br />
-      Me gusta aprender y enfrentar nuevos desafíos. Actualmente, estoy buscando oportunidades
-      para aplicar mis habilidades en proyectos interesantes.
-    </p>
+    {
+      text.map((paragraph) => (
+        <p class="text-base sm:text-lg leading-relaxed mb-4">{paragraph}</p>
+      ))
+    }
   </div>
 </section>
